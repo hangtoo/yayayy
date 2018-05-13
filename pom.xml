@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.hangtoo</groupId>
+  <artifactId>yayayy</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>${project.artifactId}</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!--Common libs -->
+    <commons_lang3_version>3.4</commons_lang3_version>
+    <commons_codec_version>1.4</commons_codec_version>
+    <commons_beanutils_version>1.9.2</commons_beanutils_version>
+    <commons_httpclient_version>3.1</commons_httpclient_version>
+    <commons_io_version>1.4</commons_io_version>
+    <commons_fileupload_version>1.3.2</commons_fileupload_version>
+    <slf4j_version>1.7.21</slf4j_version>
+    <log4j_version>1.2.17</log4j_version>
+    <httpclient_version>4.4.1</httpclient_version>
+    <lombok_version>1.16.6</lombok_version>
+    <aspectj_version>1.8.9</aspectj_version>
+    <velocity_version>1.7</velocity_version>
+    <dom4j_version>1.6.1</dom4j_version>
+    <druid_version>1.0.20</druid_version>
+
+    <jedis_version>2.9.0</jedis_version>
+    <ehcache_version>2.10.3</ehcache_version>
+    <xmemcached_version>1.3.8</xmemcached_version>
+
+    <guava_version>18.0</guava_version>
+
+    <json_version>20160212</json_version>
+    <json_lib_version>2.4</json_lib_version>
+    <jsoup_version>1.8.3</jsoup_version>
+    <fastjson_version>1.2.22</fastjson_version>
+    <fasterxml_version>2.5.0</fasterxml_version>
+    <jackson_jaxrs_version>1.9.13</jackson_jaxrs_version>
+    <gson_version>2.8.0</gson_version>
+    <bcprov_version>1.56</bcprov_version>
+
+    <quartz_version>2.2.3</quartz_version>
+
+    <ezmorph_version>1.0.6</ezmorph_version>
+    <poi_ooxml_version>3.8</poi_ooxml_version>
+    <drools_knowledge_version>6.5.0.Final</drools_knowledge_version>
+    <dashboard_builder_version>6.5.0.Final</dashboard_builder_version>
+    <mail_version>1.4</mail_version>
+    <squirrel_version>0.3.8</squirrel_version>
+
+    <reflectasm_version>1.11.3</reflectasm_version>
+    <resteasy_version>3.0.7.Final</resteasy_version>
+    <javassist_version>3.18.2-GA</javassist_version>
+
+    <tomcat_embed_version>8.0.36</tomcat_embed_version>
+    <servlet_version>2.5</servlet_version>
+    <jstl_version>1.2</jstl_version>
+
+    <junit_version>4.12</junit_version>
+
+    <!--spring libs -->
+    <spring_version>4.3.0.RELEASE</spring_version>
+    <spring-session_version>1.3.1.RELEASE</spring-session_version>
+
+    <mysql_connector_version>5.1.39</mysql_connector_version>
+    <mybatis_version>3.2.8</mybatis_version>
+    <mybatis-spring_version>1.2.2</mybatis-spring_version>
+
+    <!--dubbo libs -->
+    <dubbo_version>2.5.6</dubbo_version>
+    <netty_version>3.10.5.Final</netty_version>
+    <netty_all_version>4.1.16.Final</netty_all_version>
+    <zookeeper_version>3.4.9</zookeeper_version>
+    <zkclient_version>0.8</zkclient_version>
+
+    <!--rocketmq -->
+    <rocketmq_version>3.2.6</rocketmq_version>
+    <xstream_version>1.4.9</xstream_version>
+    <activemq_version>5.14.4</activemq_version>
+
+    <!-- fastdfs相关 -->
+    <fastdfs_version>1.27.0.0</fastdfs_version>
+
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>nexus</id>
+      <name>Nexus Repository</name>
+      <url>http://nexus.hangtoo.com:8081/repository/yayayy/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-common</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-pojo</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-base</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-dao</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-facade-common</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-facade-app</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-facade-bank</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-facade-webapp</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-gateway-app</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-gateway-webapp</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-provider-common</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-provider-app</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-provider-webapp</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-provider-tojsbank</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.hangtoo</groupId>
+        <artifactId>yayayy-webapp</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aspects</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session</artifactId>
+        <version>${spring-session_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session-data-redis</artifactId>
+        <version>${spring-session_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jms</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-oxm</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>${dom4j_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>net.sf.ehcache</groupId>
+        <artifactId>ehcache</artifactId>
+        <version>${ehcache_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.googlecode.xmemcached</groupId>
+        <artifactId>xmemcached</artifactId>
+        <version>${xmemcached_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commons_beanutils_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${commons_codec_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${httpclient_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>${httpclient_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-httpclient</groupId>
+        <artifactId>commons-httpclient</artifactId>
+        <version>${commons_httpclient_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>${commons_fileupload_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${slf4j_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${log4j_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>${json_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.velocity</groupId>
+        <artifactId>velocity</artifactId>
+        <version>${velocity_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>${jedis_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>${mybatis_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis-spring_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons_lang3_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>${jsoup_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql_connector_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15on</artifactId>
+        <version>${bcprov_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons_io_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${fasterxml_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${fasterxml_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${fasterxml_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-core</artifactId>
+        <version>${tomcat_embed_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-logging-juli</artifactId>
+        <version>${tomcat_embed_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>${jstl_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet_version}</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-jaxrs</artifactId>
+        <version>${jackson_jaxrs_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>${gson_version}</version>
+      </dependency>
+
+      <!-- Dubbo -->
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo_version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>com.101tec</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>${zkclient_version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty</artifactId>
+        <version>${netty_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jaxrs</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-client</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-netty</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jdk-http</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jackson-provider</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jaxb-provider</artifactId>
+        <version>${resteasy_version}</version>
+      </dependency>
+
+      <!-- activemq -->
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>activemq-spring</artifactId>
+        <version>${activemq_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.esotericsoftware</groupId>
+        <artifactId>reflectasm</artifactId>
+        <version>${reflectasm_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz</artifactId>
+        <version>${quartz_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz-jobs</artifactId>
+        <version>${quartz.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>net.sf.ezmorph</groupId>
+        <artifactId>ezmorph</artifactId>
+        <version>${ezmorph_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>${poi_ooxml_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>net.sf.json-lib</groupId>
+        <artifactId>json-lib</artifactId>
+        <version>${json_lib_version}</version>
+        <classifier>jdk15</classifier>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>knowledge-api</artifactId>
+        <version>${drools_knowledge_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.dashboard-builder</groupId>
+        <artifactId>dashboard-builder-bom</artifactId>
+        <version>${dashboard_builder_version}</version>
+        <type>pom</type>
+      </dependency>
+
+      <dependency>
+        <groupId>javax.mail</groupId>
+        <artifactId>mail</artifactId>
+        <version>${mail_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>${javassist_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit_version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba.rocketmq</groupId>
+        <artifactId>rocketmq-client</artifactId>
+        <version>${rocketmq_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty_all_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.thoughtworks.xstream</groupId>
+        <artifactId>xstream</artifactId>
+        <version>${xstream_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>net.oschina.zcx7878</groupId>
+        <artifactId>fastdfs-client-java</artifactId>
+        <version>${fastdfs_version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.squirrelframework</groupId>
+        <artifactId>squirrel-foundation</artifactId>
+        <version>${squirrel_version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>yayayy-common</module>
+    <module>yayayy-pojo</module>
+    <module>yayayy-base</module>
+    <module>yayayy-dao</module>
+
+    <module>yayayy-facade-common</module>
+    <module>yayayy-facade-webapp</module>
+
+    <module>yayayy-provider-common</module>
+    <module>yayayy-provider-webapp</module>
+
+    <module>yayayy-gateway-webapp</module>
+
+    <module>yayayy-webapp</module>
+    <module>yayayy-job</module>
+  </modules>
+
+</project>
