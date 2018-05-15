@@ -1,4 +1,4 @@
-package com.hangtoo.common;
+package com.hangtoo.common.squirrel;
 
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
