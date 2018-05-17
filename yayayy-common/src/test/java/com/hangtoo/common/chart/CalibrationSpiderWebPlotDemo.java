@@ -119,7 +119,7 @@ public class CalibrationSpiderWebPlotDemo extends ApplicationFrame {
 			g.fillRect(0, 0, 300, 600);
 			//Graphics g=ret.getGraphics();
 			g.setColor(Color.ORANGE);
-			g.setBackground(Color.ORANGE); 
+			//g.setBackground(Color.ORANGE); 
 
 			g.drawImage(image,0,300,150,150,null);
 			

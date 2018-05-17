@@ -58,6 +58,16 @@ public class CalibrationSpiderWebPlot extends SpiderWebPlot {
     private boolean drawRing = false;
 
     /**
+     * 画环
+     */
+    private Color ringColor = Color.WHITE;
+
+    /**
+     * 画刻度
+     */
+    private boolean drawLable = false;
+
+    /**
      * 刻度前缀
      */
     private String lablePrefix = "";
@@ -232,7 +242,7 @@ public class CalibrationSpiderWebPlot extends SpiderWebPlot {
 			    	   double upperLeftY = centre.getY() - r;
 			    	   double d = 2 * r;
 						Ellipse2D ring = new Ellipse2D.Double(upperLeftX, upperLeftY, d, d);
-						g2.setPaint(Color.lightGray);
+						g2.setPaint(ringColor);
 						g2.draw(ring);				
 				}
            }
@@ -310,7 +320,7 @@ public class CalibrationSpiderWebPlot extends SpiderWebPlot {
 
                     g2.draw(new Line2D.Double(transformed[0], transformed[1], x1, y1)); 
 
-                    if (startAngle == this.getStartAngle()) { 
+                    if (this.isDrawLable()&&startAngle == this.getStartAngle()) { 
                             String label = format.format(((double) i / (double) ticks) * this.getMaxValue()); 
                             final LineMetrics lm = getLabelFont().getLineMetrics(label, frc); 
                             final double ascent = lm.getAscent(); 
@@ -538,5 +548,21 @@ public class CalibrationSpiderWebPlot extends SpiderWebPlot {
 	
 	public void setTicks(int ticks) {
 		this.ticks = ticks;
+	}
+
+	public boolean isDrawLable() {
+		return drawLable;
+	}
+
+	public void setDrawLable(boolean drawLable) {
+		this.drawLable = drawLable;
+	}
+
+	public Color getRingColor() {
+		return ringColor;
+	}
+
+	public void setRingColor(Color ringColor) {
+		this.ringColor = ringColor;
 	} 
 }
