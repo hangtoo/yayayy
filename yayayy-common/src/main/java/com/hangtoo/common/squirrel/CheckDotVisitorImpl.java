@@ -13,10 +13,13 @@ class CheckDotVisitorImpl implements CheckDotVisitor {
 
     protected final StringBuilder transBuf = new StringBuilder();
     
+    protected String currentstate;
+    
     @Override
     public void visitOnEntry(StateMachine<?, ?, ?, ?> visitable) {
+    		currentstate=FlowState.valueOf(visitable.getCurrentState().toString()).name;
         writeLine("digraph {\ncompound=true;");
-        writeLine("subgraph cluster_StateMachine {\nlabel=\""+visitable.getClass().getName()+"\";");
+        //writeLine("subgraph cluster_StateMachine {\nlabel=\""+visitable.getClass().getName()+"\";");
     }
 
     @Override
