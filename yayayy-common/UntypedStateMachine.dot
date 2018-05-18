@@ -1,0 +1,15 @@
+digraph {
+compound=true;
+subgraph cluster_StateMachine {
+label="com.hangtoo.common.squirrel.CheckStateMachineSample$CheckStateMachine";
+REJECTED [label="拒绝"];
+DRAFT [label="草稿"];
+DEPARTMENT_APPROVED [label="部门领导审批通过"];
+APPLYING [label="申请中"];
+PASSED [label="通过"];
+
+DRAFT -> APPLYING [ label="申请"];
+DEPARTMENT_APPROVED -> PASSED [ label="HR审批通过"];
+DEPARTMENT_APPROVED -> REJECTED [ label="拒绝"];
+APPLYING -> DEPARTMENT_APPROVED [ label="部门领导审批通过"];
+APPLYING -> REJECTED [ label="拒绝"];}}

@@ -1,5 +1,6 @@
 package com.hangtoo.common.squirrel;
 
+import org.squirrelframework.foundation.component.SquirrelProvider;
 import org.squirrelframework.foundation.fsm.StateMachineBuilderFactory;
 import org.squirrelframework.foundation.fsm.UntypedStateMachine;
 import org.squirrelframework.foundation.fsm.UntypedStateMachineBuilder;
@@ -12,28 +13,9 @@ import org.squirrelframework.foundation.fsm.impl.AbstractUntypedStateMachine;
 
 public class CheckStateMachineSample {
 	// 1. Define State Machine Event
-	enum FlowEvent {
-		APPLY("申请", "APPLY"), REJECT("拒绝", "REJECT"), DEPARTMENT_APPROVE("部门领导审批通过", "DEPARTMENT_APPROVE"), HR_APPROVE("HR审批通过", "HR_APPROVE");
-		String name;
-		String code;
 
-		FlowEvent(String name, String code) {
-			this.name = name;
-			this.code = code;
-		}
-	}
 	// 2. Define State
-	enum FlowState {
-		DRAFT("草稿", "DRAFT"), APPLYING("申请中", "APPLYING"), REJECTED("拒绝", "REJECTED"), DEPARTMENT_APPROVED("部门领导审批通过", "DEPARTMENT_APPROVED"),PASSED("通过", "PASSED");
-		String name;
-		String code;
-
-		FlowState(String name, String code) {
-			this.name = name;
-			this.code = code;
-		}
-	}
-
+	
 	@StateMachineParameters(stateType = FlowState.class, eventType = FlowEvent.class,
 			// StateMachineContext 自定义上下文，用来传递数据
 			contextType = CheckStateMachineContext.class)
@@ -49,7 +31,6 @@ public class CheckStateMachineSample {
 	
 		    })
 	static class CheckStateMachine extends AbstractUntypedStateMachine {
-
 		public void doSomething(FlowState fromState, FlowState toState, FlowEvent event,
 				CheckStateMachineContext stateMachineContext) {
 			System.out.println(String.format("do %s from %s to %s  with context is %s",
@@ -77,5 +58,9 @@ public class CheckStateMachineSample {
 		fsm.fire(FlowEvent.HR_APPROVE,context);
 		System.out.println("Current state is " + fsm.getCurrentState());
 		
+		
+		CheckDotVisitor visitor = SquirrelProvider.getInstance().newInstance(CheckDotVisitor.class);
+		fsm.accept(visitor);
+		visitor.convertDotFile("UntypedStateMachine");
 	}
 }
