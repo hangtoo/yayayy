@@ -13,13 +13,15 @@ class CheckDotVisitorImpl implements CheckDotVisitor {
 
     protected final StringBuilder transBuf = new StringBuilder();
     
-    protected String currentstate;
+    protected FlowState currentstate;
+    
+    protected String currentcolor;
     
     @Override
     public void visitOnEntry(StateMachine<?, ?, ?, ?> visitable) {
-    		currentstate=FlowState.valueOf(visitable.getCurrentState().toString()).name;
+    		currentstate=FlowState.valueOf(visitable.getCurrentState().toString());
         writeLine("digraph {\ncompound=true;");
-        //writeLine("subgraph cluster_StateMachine {\nlabel=\""+visitable.getClass().getName()+"\";");
+        writeLine("subgraph cluster_StateMachine {\nlabel=\"流程图\";");
     }
 
     @Override
@@ -39,8 +41,14 @@ class CheckDotVisitorImpl implements CheckDotVisitor {
                 writeLine(stateId+"History"+" [label=\"\"];");
             }
         } else {
-        	
-            writeLine(stateId+" [label=\""+	FlowState.valueOf(visitable.getStateId().toString()).name+"\"];");
+        		FlowState flowState=FlowState.valueOf(visitable.getStateId().toString());
+        		if(currentstate.equals(flowState)) {
+        			currentcolor="yellowgreen";
+        		}else {
+        			currentcolor="black";
+        		}
+        		
+            writeLine(stateId+" [label=\""+	flowState.name+"\" , color=\""+currentcolor+"\"];");
         }
     }
 

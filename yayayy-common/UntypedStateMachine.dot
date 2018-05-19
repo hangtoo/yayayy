@@ -1,10 +1,12 @@
 digraph {
 compound=true;
-REJECTED [label="拒绝"];
-DRAFT [label="草稿"];
-DEPARTMENT_APPROVED [label="部门领导审批通过"];
-APPLYING [label="申请中"];
-PASSED [label="通过"];
+subgraph cluster_StateMachine {
+label="流程图";
+REJECTED [label="拒绝" , color="black"];
+DRAFT [label="草稿" , color="black"];
+DEPARTMENT_APPROVED [label="部门领导审批通过" , color="black"];
+APPLYING [label="申请中" , color="black"];
+PASSED [label="通过" , color="yellowgreen"];
 
 DRAFT -> APPLYING [ label="申请"];
 DEPARTMENT_APPROVED -> PASSED [ label="HR审批通过"];
