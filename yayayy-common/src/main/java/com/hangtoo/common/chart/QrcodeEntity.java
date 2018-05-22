@@ -6,6 +6,9 @@ public class QrcodeEntity {
 	int bgColor;
 	int code_width;
 	
+	int x;
+	int y;
+	
 	public String getContent() {
 		return content;
 	}
@@ -29,6 +32,18 @@ public class QrcodeEntity {
 	}
 	public void setCode_width(int code_width) {
 		this.code_width = code_width;
+	}
+	public int getX() {
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
 	}
 	
 	
