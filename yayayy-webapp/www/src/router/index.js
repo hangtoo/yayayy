@@ -51,45 +51,6 @@ export const constantRouterMap = [
     path: '/components',
     component: Layout,
     redirect: 'noredirect',
-    name: 'tCustomer',
-    meta: {
-      title: 'tcustomer',
-      icon: 'icon'
-    },
-    children: [
-      { path: 'tCustomer', component: _import('page/TCustomer'), name: 'tCustomer', meta: { title: 'tCustomer',icon: 'icon' }},
-    ]
-  },
-  {
-    path: '/components',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'tCustomerInvest',
-    meta: {
-      title: 'tCustomerInvest',
-      icon: 'chart'
-    },
-    children: [
-      { path: 'tCustomerInvest', component: _import('page/TCustomerInvest'), name: 'tCustomerInvest', meta: { title: 'tCustomerInvest',icon: 'chart' }},
-    ]
-  },
-  {
-    path: '/components',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'tInvestInfo',
-    meta: {
-      title: 'tInvestInfo',
-      icon: 'component'
-    },
-    children: [
-      { path: 'tInvestInfo', component: _import('page/TInvestInfo'), name: 'tInvestInfo', meta: { title: 'tInvestInfo',icon: 'component' }},
-    ]
-  },
-  {
-    path: '/components',
-    component: Layout,
-    redirect: 'noredirect',
     name: 'tBusiness',
     meta: {
       title: 'tBusiness',
@@ -99,21 +60,6 @@ export const constantRouterMap = [
       { path: 'tBanner', component: _import('page/TBanner'), name: 'tBanner', meta: { title: 'tBanner'}},
       { path: 'tArticle', component: _import('page/TArticle'), name: 'tArticle', meta: { title: 'tArticle' }},
       { path: 'tArticleAdv', component: _import('page/TArticleAdv'), name: 'tArticleAdv', meta: { title: 'tArticleAdv' }},
-      { path: 'tPromotion', component: _import('page/TPromotion'), name: 'tPromotion', meta: { title: 'tPromotion'}},
-      { path: 'tCustomerFrom', component: _import('page/TCustomerFrom'), name: 'tCustomerFrom', meta: { title: 'tCustomerFrom' }},
-    ]
-  },
-  {
-    path: '/components',
-    component: Layout,
-    redirect: 'noredirect',
-    name: 'trackStatistics',
-    meta: {
-      title: 'trackStatistics',
-      icon: 'table'
-    },
-    children: [
-      { path: 'trackStatistics', component: _import('page/TrackStatistics'), name: 'trackStatistics', meta: { title: 'trackStatistics',icon: 'component' }},
     ]
   },
   {
@@ -131,7 +77,6 @@ export const constantRouterMap = [
       { path: 'sysRole', component: _import('page/SysRole'), name: 'sysRole', meta: { title: 'sysRole'}},
       { path: 'sysDepartment', component: _import('page/SysDepartment'), name: 'sysDepartment', meta: { title: 'sysDepartment'}},
       { path: 'tApilog', component: _import('page/TApiLog'), name: 'tApilog', meta: { title: 'tApilog'}},
-      { path: 'tBankFacade', component: _import('page/TBankFacade'), name: 'tBankFacade', meta: { title: 'tBankFacade'}},
       { path: 'extConfigparam', component: _import('page/ExtConfigparam'), name: 'extConfigparam', meta: { title: 'extConfigparam'}},
     ]
   },
