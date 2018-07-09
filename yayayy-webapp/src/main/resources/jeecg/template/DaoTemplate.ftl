@@ -1,7 +1,7 @@
 package ${bussPackage}.${entityPackage}.dao;
 
 
-import com.sunfintech.base.dao.BaseDao;
+import com.hangtoo.base.dao.BaseDao;
 import ${bussPackage}.${entityPackage}.entity.${className};
 
 /**

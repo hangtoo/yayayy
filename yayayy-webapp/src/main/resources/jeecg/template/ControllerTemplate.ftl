@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sunfintech.base.web.BaseAction;
+import com.hangtoo.base.web.BaseAction;
 import ${bussPackage}.${entityPackage}.entity.${className};
 import ${bussPackage}.${entityPackage}.page.${className}Page;
 import ${bussPackage}.${entityPackage}.service.I${className}Service;

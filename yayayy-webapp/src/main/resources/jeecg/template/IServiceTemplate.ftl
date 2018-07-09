@@ -1,7 +1,7 @@
 package ${bussPackage}.${entityPackage}.service;
 
 
-import com.sunfintech.base.service.IBaseService;
+import com.hangtoo.base.service.IBaseService;
 import ${bussPackage}.${entityPackage}.entity.${className};
 
 /**

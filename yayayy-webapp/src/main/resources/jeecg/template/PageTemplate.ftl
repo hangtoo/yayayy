@@ -1,6 +1,6 @@
 package ${bussPackage}.${entityPackage}.page;
 
-import com.sunfintech.base.page.BasePage;
+import com.hangtoo.base.page.BasePage;
 
 /**
  *

@@ -1,0 +1,19 @@
+
+var key = '-----BEGIN PRIVATE KEY-----\
+      MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALX7ToNqDpvLKJD4\
+      aRrdFZokvlljfAsCu+7RAe2fNHtJY72AdUX9nRe0tPpV/rqyi9W/sezKftOaxmI7\
+      PKqVIJ5S939azHL6dbGfEs+Tbi3xvhJolss7Ue/+gwCUIctUGr6dtgZSVk3PsZAz\
+      rcKSAmZaCiD0AIwF7FQp35K16h2bAgMBAAECgYEAiMz7/ooRpUgZnLFAwbME9DU+\
+      6o+Axf4uLJ7t5iVSHIPU+LXCcvTtzM5JZg6TSOHDgNFz/V9T69pj26BQQKOOOnEM\
+      jDJjpRpcharP0dJL+P+Na44rq2PvQafQCnkqLZlj5p/e7fDVyJW+uYPmmBv2W4Fv4\
+      qnQiLUGOq2IZM+ZfFECQQDo5hYS6AxF8AQhhYifEPk8n5YqShJSK/JQxrV89a/1iC\
+      KrAuQyfFeS/l5Mo442vItro2hzTsYb8GnRkYDs4lydAkEAyAhNB2rk3EaS64yme30\
+      /9GhZk23gei8DiNVGiu6Bl8lOHoxcEG4nBbIbiNIAYWREQCRVHsT8ei0NkQrz2CZh\
+      lwJAQD5nzGNSL2Cb4xtQqoAmIEDtTVENaLlSqFGH8qZbGWGqHn43sG14QsYEASQEs\
+      LilxNVYlKYgI8jXh8WZSL7QSQJBAIBBukooQufuJGP9wf1qGKi4g77g887D+EszHN\
+      EWDmfpfjpeGuW6CzE+uyLmK7JGnPBXm3BoM86OtqUqVaFhMq8CQQDAMFDVNzV1PE+\
+      qpklQAYJxg0TkErYwDlkxcDvbyXDtQ3Au83ZQtZ/MDTNIuhsLTyHSVqV0K20WyKwJ\
+      jAd6vaLs\
+      -----END PRIVATE KEY-----';
+
+export default key;

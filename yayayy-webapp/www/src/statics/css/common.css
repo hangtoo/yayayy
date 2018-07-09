@@ -1,0 +1,16 @@
+.sbd-con {
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    background: #fff;
+}
+
+.scroll-con {
+	overflow-y: scroll;
+    background: #fff;
+}
+
+#app {
+	height: 100%;
+}
+

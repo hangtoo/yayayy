@@ -1,7 +1,7 @@
 package ${bussPackage}.${entityPackage}.entity;
 
 import java.io.Serializable;
-import com.sunfintech.base.entity.BaseEntity;
+import com.hangtoo.base.entity.BaseEntity;
 
 /**
  *

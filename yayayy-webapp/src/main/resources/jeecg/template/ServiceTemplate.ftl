@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.alibaba.dubbo.config.annotation.Service;
 import ${bussPackage}.${entityPackage}.entity.${className};
 import ${bussPackage}.${entityPackage}.dao.${className}Dao;
-import com.sunfintech.base.service.BaseService;
+import com.hangtoo.base.service.BaseService;
 
 /**
  *
